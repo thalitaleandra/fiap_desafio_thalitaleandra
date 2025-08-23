@@ -1,0 +1,9 @@
+{
+    "editor.formatOnSave": true,
+    "editor.codeActionOnSave":{
+        "source.fixAll.eslint": "always"
+    },
+    "[typescriptreact]":{
+       "editor.defaultFormatter": "esbenp.prettier-vscode"
+    }
+}
