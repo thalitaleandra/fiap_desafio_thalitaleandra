@@ -1,0 +1,85 @@
+@import "@/styles/variables.scss";
+
+@mixin flex-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@mixin flex-space-between {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+@mixin box-shadow($color: rgba(0,0,0,0.1), $x: 0px, $y: 4px, $blur: 6px) {
+  box-shadow: $x $y $blur $color;
+}
+
+@mixin border-radius($radius: $border-radius-md) {
+  border-radius: $radius;
+}
+
+@mixin transition($props: all, $duration: 0.3s, $ease: ease-in-out) {
+  transition: $props $duration $ease;
+}
+
+@mixin button-style(
+  $bg: $color-accent,
+  $color: $color-text-primary,
+  $padding-vertical: $spacing-sm,
+  $padding-horizontal: $spacing-md
+) {
+  background-color: $bg;
+  color: $color;
+  padding: $padding-vertical $padding-horizontal;
+  border: none;
+  cursor: pointer;
+  font-family: $font-primary;
+  font-weight: $font-weight-medium;
+  text-transform: uppercase;
+  @include border-radius();
+  @include transition();
+  &:hover {
+    filter: brightness(1.05);
+  }
+  &:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+  }
+}
+
+@mixin h1-style {
+  font-family: $font-primary;
+  font-weight: $font-weight-medium;
+  font-size: $font-size-h1;
+  line-height: $line-height-h1;
+  letter-spacing: $letter-spacing-h1;
+  text-transform: $text-transform-h1;
+  color: $color-text-primary;
+}
+
+@mixin h2-style {
+  font-family: $font-primary;
+  font-weight: $font-weight-medium;
+  font-size: $font-size-h2;
+  line-height: $line-height-h2;
+  color: $color-text-primary;
+}
+
+@mixin paragraph-style($font-size: $font-size-base, $line-height: $line-height-base, $color: $color-text-secondary) {
+  font-family: $font-primary;
+  font-weight: $font-weight-regular;
+  font-size: $font-size;
+  line-height: $line-height;
+  color: $color;
+}
+
+@mixin container($max-width: 1920px, $padding: $spacing-md) {
+  width: 100%;
+  max-width: $max-width;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: $padding;
+  padding-right: $padding;
+}

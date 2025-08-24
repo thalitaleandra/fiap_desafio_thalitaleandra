@@ -1,0 +1,90 @@
+$breakpoints: (
+  mobileSmall: 20rem,
+  mobileMedium: 22.5rem,
+  mobileLarge: 25.875rem,
+  mobileXLarge: 28rem,
+
+  tabletSmall: 48rem,
+  tabletMedium: 51.25rem,
+  tabletLarge: 64rem,
+  tabletXLarge: 68rem,
+
+  desktopSmall: 80rem,
+  desktopMedium: 85.375rem,
+  desktopLarge: 90rem,
+  desktopXLarge: 100rem,
+
+  desktopFHD: 120rem,
+  desktop2K: 160rem,
+  desktop4K: 240rem
+);
+
+@function breakpoint($name) {
+  @return map-get($breakpoints, $name);
+}
+
+@mixin below($size) {
+  @media (max-width: #{$size}) {
+    @content;
+  }
+}
+
+@mixin above($size) {
+  @media (min-width: #{$size}) {
+    @content;
+  }
+}
+
+@mixin mobile {
+  @include below(breakpoint(mobileLarge)) {
+    @content;
+  }
+}
+
+@mixin tablet {
+  @media (min-width: #{breakpoint(tabletSmall)}) and (max-width: calc(#{breakpoint(desktopSmall)} - 0.0625rem)) {
+    @content;
+  }
+}
+
+@mixin desktop {
+  @include above(breakpoint(desktopSmall)) {
+    @content;
+  }
+}
+
+@mixin portrait {
+  @media (orientation: portrait) {
+    @content;
+  }
+}
+
+@mixin landscape {
+  @media (orientation: landscape) {
+    @content;
+  }
+}
+
+@mixin mobilePortrait {
+  @media (max-width: #{breakpoint(mobileLarge)}) and (orientation: portrait) {
+    @content;
+  }
+}
+
+@mixin mobileLandscape {
+  @media (max-width: #{breakpoint(mobileLarge)}) and (orientation: landscape) {
+    @content;
+  }
+}
+
+@mixin tabletPortrait {
+  @media (min-width: #{breakpoint(tabletSmall)}) and (max-width: calc(#{breakpoint(desktopSmall)} - 0.0625rem)) and (orientation: portrait) {
+    @content;
+  }
+}
+
+@mixin tabletLandscape {
+  @media (min-width: #{breakpoint(tabletSmall)}) and (max-width: calc(#{breakpoint(desktopSmall)} - 0.0625rem)) and (orientation: landscape) {
+    @content;
+  }
+}

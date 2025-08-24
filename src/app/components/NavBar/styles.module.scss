@@ -1,0 +1,43 @@
+@import "../../styles/responsive.scss";
+
+.navbar {
+  width: 100%;
+  max-width: 1920px;
+  height: 80px;
+  background-color: #202121;
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+  position: relative;
+  margin: 0 auto;
+
+  .logoContainer {
+    width: 144px;
+    height: 39px;
+    position: absolute;
+    top: 21px;
+    left: 885px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  @include tablet {
+    .logoContainer {
+      top: 18px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 120px;
+      height: auto;
+    }
+  }
+
+  @include mobile {
+    .logoContainer {
+      top: 15px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 100px;
+      height: auto;
+    }
+  }
+}
