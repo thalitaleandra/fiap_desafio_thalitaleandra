@@ -73,6 +73,16 @@ O projeto segue **componentização** e separação por tipo de recurso:
 ## 📦 Pré-requisitos
 - Node.js >= 18  
 - Yarn >= 1.22  
+## ⚙️ Instalação com Yarn
+```bash
+# Clonar o repositório
+git clone git@github.com:thalitaleandra/fiap_desafio_thalitaleandra.git
+
+# Acessar a pasta do projeto
+cd fiap_desafio_thalitaleandra
+
+# Instalar dependências
+yarn install
 
 🚀 Como Executar
 # Iniciar servidor de desenvolvimento
@@ -81,15 +91,3 @@ yarn dev
 # O projeto estará disponível em:
 # http://localhost:3000
 
-⚡ Performance & Otimizações
-
-Lazy loading de imagens
-
-SCSS modular para CSS enxuto
-
-Tipagem com TypeScript
-
-Variáveis SCSS para cores, fontes e espaçamentos
-
-
-## 📁 Estrutura do Projeto
