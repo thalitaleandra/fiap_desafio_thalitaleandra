@@ -1,0 +1,278 @@
+.faq {
+  width: 100%;
+  background-color: #000000;
+  padding: 100px 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+.container {
+  width: 1499px;
+  height: 556px;
+  position: relative;
+  margin: 0 auto;
+}
+
+.header {
+  margin-bottom: 60px;
+}
+
+.title {
+  font-family: "Gotham HTF", Arial, sans-serif;
+  font-weight: 500;
+  font-size: 92px;
+  line-height: 27px;
+  letter-spacing: -3%;
+  color: #FFFFFF;
+  margin: 0;
+  opacity: 1;
+  width: 221px;
+  height: 70px;
+}
+
+.subtitle {
+  font-family: "Gotham HTF", Arial, sans-serif;
+  font-weight: 500;
+  font-size: 22px;
+  line-height: 27px;
+  letter-spacing: 3%;
+  color: #F80D54;
+  margin: 20px 0 0 0;
+  opacity: 1;
+  width: 229px;
+  height: 27px;
+}
+
+.content {
+  width: 100%;
+}
+
+.questionsGrid {
+  display: grid;
+  grid-template-columns: 437px 435px 299px;
+  grid-template-rows: repeat(2, auto);
+  gap: 30px 96px;
+  align-items: start;
+}
+
+.questionItem {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  background: none;
+  border: none;
+  padding: 0;
+  text-align: left;
+  font: inherit;
+  color: inherit;
+  outline: none;
+  
+  &:focus {
+    outline: none;
+  }
+  
+  &:active {
+    outline: none;
+    background: none;
+  }
+  
+  &:focus-visible {
+    outline: 2px solid #F80D54;
+    outline-offset: 2px;
+  }
+}
+
+.line {
+  width: 65px;
+  height: 0px;
+  border: none;
+  border-top: 2px solid #949B99;
+  opacity: 0.5;
+  margin-bottom: 30px;
+  transition: all 0.3s ease;
+}
+
+.lineHover {
+  width: 435px;
+  border-top: 2px solid #ED145B;
+  opacity: 1;
+}
+
+.question {
+  font-family: "Gotham HTF", Arial, sans-serif;
+  font-weight: 500;
+  font-size: 20px;
+  line-height: 24px;
+  letter-spacing: -1%;
+  text-transform: uppercase;
+  color: #949B99;
+  margin: 0;
+  opacity: 1;
+}
+
+.answer {
+  font-family: "Roboto", Arial, sans-serif;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 19px;
+  letter-spacing: 5%;
+  color: #949B99;
+  margin: 7px 0 0 0;
+  opacity: 1;
+  animation: fadeIn 0.3s ease;
+  background: none;
+  border: none;
+  box-shadow: none;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.questionItem:nth-child(1) {
+  .question {
+    width: 437px;
+    height: 32px;
+  }
+  
+  .answer {
+    width: 426px;
+    height: 38px;
+  }
+}
+
+.questionItem:nth-child(2) {
+  .question {
+    width: 435px;
+    height: 59px;
+  }
+  
+  .answer {
+    width: 395px;
+    height: 57px;
+  }
+}
+
+.questionItem:nth-child(3) {
+  .question {
+    width: 434px;
+    height: 32px;
+  }
+  
+  .answer {
+    width: 428px;
+    height: 71px;
+  }
+}
+
+.questionItem:nth-child(4) {
+  .question {
+    width: 437px;
+    height: 29px;
+  }
+  
+  .answer {
+    width: 127px;
+    height: 19px;
+    margin-top: 12px;
+  }
+}
+
+.questionItem:nth-child(5) {
+  .question {
+    width: 435px;
+    height: 55px;
+  }
+  
+  .answer {
+    width: 409px;
+    height: 95px;
+    margin-top: 12px;
+  }
+}
+
+.questionItem:nth-child(6) {
+  .question {
+    width: 435px;
+    height: 55px;
+  }
+  
+  .answer {
+    width: 405px;
+    height: 87px;
+    margin-top: 14px;
+  }
+}
+
+@media (max-width: 414px) {
+  .faq {
+    padding: 60px 0;
+  }
+
+  .container {
+    width: 100%;
+    height: auto;
+    padding: 0 20px;
+  }
+
+  .title {
+    font-size: 48px;
+    line-height: 40px;
+    text-align: center;
+    width: 100%;
+    height: auto;
+  }
+
+  .subtitle {
+    font-size: 18px;
+    line-height: 22px;
+    text-align: center;
+    margin: 15px 0 0 0;
+    width: 100%;
+    height: auto;
+  }
+
+  .questionsGrid {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+  }
+
+  .questionItem {
+    width: 100%;
+    
+    .question {
+      width: 100% !important;
+      height: auto !important;
+      font-size: 16px;
+      line-height: 20px;
+      text-align: left;
+    }
+    
+    .answer {
+      width: 100% !important;
+      height: auto !important;
+      font-size: 14px;
+      line-height: 18px;
+      margin-top: 7px;
+    }
+  }
+
+  .line {
+    width: 50px;
+    margin-bottom: 20px;
+  }
+  
+  .lineHover {
+    width: 100%;
+  }
+}

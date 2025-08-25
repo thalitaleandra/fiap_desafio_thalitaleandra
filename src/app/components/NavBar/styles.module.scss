@@ -1,4 +1,4 @@
-@import "../../styles/responsive.scss";
+@use "../../styles/responsive.scss" as *;
 
 .navbar {
   width: 100%;
@@ -8,8 +8,12 @@
   display: flex;
   justify-content: flex-start;
   align-items: flex-start;
-  position: relative;
+  position: fixed;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
   margin: 0 auto;
+  z-index: 1000;
 
   .logoContainer {
     width: 144px;
@@ -32,12 +36,25 @@
   }
 
   @include mobile {
+    width: 414px;
+    height: 80px;
+    background-color: #202121;
+    transform: none;
+    left: 0;
     .logoContainer {
-      top: 15px;
-      left: 50%;
-      transform: translateX(-50%);
-      width: 100px;
-      height: auto;
+      width: 84px;
+      height: 50%;
+      left: 166px;
+      transform: none;
     }
+  }
+  .progressBar {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    height: 4px;
+    background-color: #f80d54;
+    transition: width 0.2s ease;
+    z-index: 10;
   }
 }
