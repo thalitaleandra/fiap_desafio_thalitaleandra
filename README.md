@@ -69,34 +69,10 @@ O projeto segue **componentização** e separação por tipo de recurso:
 - Accordion exclusivo para mobile  
 - Fontes e espaçamentos ajustados por breakpoint  
 
-## 📁 Estrutura do Projeto
-src/
-├─ app/
-│ ├─ components/ # Courses, FAQ, Header, Intro, Nav, Bar...
-│ ├─ hooks/ # Hooks reutilizáveis
-│ ├─ styles/ # SCSS, globals, variables
-│ ├─ types/ # Tipagens TypeScript
-│ └─ data/ # Conteúdo estático (cursos, FAQ)
-
-
----
 
 ## 📦 Pré-requisitos
 - Node.js >= 18  
 - Yarn >= 1.22  
-
----
-
-## ⚙️ Instalação com Yarn
-```bash
-# Clonar o repositório
-git clone git@github.com:thalitaleandra/fiap_desafio_thalitaleandra.git
-
-# Acessar a pasta do projeto
-cd fiap_desafio_thalitaleandra
-
-# Instalar dependências
-yarn install
 
 🚀 Como Executar
 # Iniciar servidor de desenvolvimento
