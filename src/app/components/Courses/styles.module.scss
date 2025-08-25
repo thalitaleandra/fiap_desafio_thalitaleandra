@@ -1,6 +1,8 @@
+@use "../../styles/responsive.scss" as *;
+
 .cursos {
   width: 100%;
-  background-color: #000000;;
+  background-color: #000000;
   padding: 100px 0;
   display: flex;
   align-items: center;
@@ -243,6 +245,7 @@
 .courseItem:nth-child(4) + .vector {
   margin: 0;
 }
+
 .courseRow {
   display: flex;
   flex-direction: column;
@@ -255,6 +258,35 @@
     background: #F80D5A;
   }
 }
+
+.accordionContainer {
+  display: none;
+}
+
+.accordionItem {
+  display: none;
+}
+
+.accordionHeader {
+  display: none;
+}
+
+.accordionTitle {
+  display: none;
+}
+
+.accordionIcon {
+  display: none;
+}
+
+.accordionContent {
+  display: none;
+}
+
+.accordionVector {
+  display: none;
+}
+
 @keyframes disappearIn {
   0% {
     opacity: 0;
@@ -283,4 +315,213 @@
 
 .disappearOut {
   animation: disappearOut 0.3s ease forwards;
+}
+
+@include mobile {
+  .title {
+    width: 326px;
+    height: 53px;
+    font-family: "Gotham HTF", Arial, sans-serif;
+    font-weight: 500;
+    font-size: 62px;
+    line-height: 60px;
+    letter-spacing: -3%;
+    color: #FFFFFF;
+    margin: 0 0 20px 0;
+  }
+
+  .subtitle {
+    width: 322px;
+    height: 20px;
+    font-family: "Gotham HTF", Arial, sans-serif;
+    font-weight: 500;
+    font-size: 22px;
+    line-height: 27px;
+    letter-spacing: 3%;
+    color: #F80D5A;
+    margin: 0;
+  }
+
+  .navigation,
+  .content,
+  .cursoCard,
+  .cursoInfo,
+  .categoryTitle,
+  .vector {
+    display: none !important;
+  }
+
+  .accordionContainer {
+    display: block !important;
+    width: 100%;
+    margin-top: 40px;
+  }
+
+  .accordionItem {
+    display: block !important;
+    width: 100%;
+    position: relative;
+
+    &::after {
+      content: '';
+      display: block;
+      width: 360px;
+      height: 0;
+      border-top: 1px solid #313738;
+      margin: 15px 0 30px 0;
+      opacity: 1;
+    }
+
+    &:last-child::after {
+      display: none;
+    }
+  }
+
+  .accordionHeader {
+    display: flex !important;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    background: none;
+    border: none;
+    padding: 0;
+    cursor: pointer;
+    margin-bottom: 0;
+
+    &:focus {
+      outline: none;
+    }
+  }
+
+  .accordionTitle {
+    display: block !important;
+    font-family: "Gotham HTF", Arial, sans-serif;
+    font-weight: 500;
+    font-size: 30px;
+    line-height: 30px;
+    letter-spacing: -3%;
+    text-transform: uppercase;
+    color: #FFFFFF;
+    text-align: left;
+    margin: 0;
+    width: 296px;
+    height: 28px;
+  }
+
+  .accordionIcon {
+    display: flex !important;
+    width: 60px;
+    height: 60px;
+    border: 1px solid #F80D5A;
+    border-radius: 50%;
+    align-items: center;
+    justify-content: center;
+    background: transparent;
+    position: relative;
+    flex-shrink: 0;
+    transition: all 0.3s ease;
+    font-family: "Gotham HTF", Arial, sans-serif;
+    font-weight: 500;
+    font-size: 37px;
+    color: #F80D5A;
+
+    &::before {
+      content: '+';
+      position: absolute;
+      transition: all 0.3s ease;
+    }
+
+    &.expanded {
+      background: #ED145B;
+      border-color: #ED145B;
+      
+      &::before {
+        content: '−';
+        color: #FFFFFF;
+      }
+    }
+  }
+
+  .accordionContent {
+    display: block !important;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease;
+    
+    &.expanded {
+      max-height: 800px;
+    }
+  }
+
+  .accordionVector {
+    display: block !important;
+    width: 360px;
+    height: 0;
+    border-top: 1px solid #566165;
+    margin: 0 0 15px 0;
+    opacity: 1;
+  }
+
+  .courseList {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+    margin-top: 15px;
+  }
+
+  .courseItem {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    align-items: flex-start;
+    position: relative;
+    margin-bottom: 23px; 
+    
+    .courseDetails {
+      width: 158px;
+      height: 12px;
+      font-family: "Gotham HTF", Arial, sans-serif;
+      font-weight: 500;
+      font-size: 10px;
+      line-height: 31px;
+      letter-spacing: 0%;
+      text-transform: uppercase;
+      color: #8A959B;
+      opacity: 1;
+      order: 1;
+      margin-bottom: 8px;
+    }
+
+    .courseTitle {
+      font-family: "PT Sans", Arial, sans-serif;
+      font-weight: 400;
+      font-size: 18px;
+      line-height: 30px;
+      letter-spacing: 0%;
+      color: #FFFFFF;
+      opacity: 1;
+      width: 194px;
+      height: 27px;
+      order: 2;
+    }
+    
+    &::after {
+      content: '';
+      display: block;
+      width: 360px;
+      height: 0;
+      border-top: 1px solid #566165;
+      margin: 15px 0 0 0;
+      opacity: 1;
+      order: 3;
+    }
+
+    &:last-child {
+      margin-bottom: 0;
+      
+      &::after {
+        display: none;
+      }
+    }
+  }
 }

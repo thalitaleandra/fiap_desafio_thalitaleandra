@@ -1,20 +1,41 @@
 "use client";
+
 import Image from "next/image";
+import { useRef } from "react";
 import styles from "./styles.module.scss";
+import useScrollProgress from "@/app/hooks/useScrollProgress";
+import TextScroller from "./TextScroller";
+import SkillsLine from "./SkillsLine";
+import {
+  mainTexts,
+  subTexts,
+  skillsItems,
+  tutorialsTexts,
+} from "@/app/@data/intro.data";
 
 export default function Intro() {
+  const sectionRef = useRef<HTMLElement>(null);
+  const scrollProgress = useScrollProgress(sectionRef);
+
   return (
-    <section className={styles.intro}>
+    <section ref={sectionRef} className={styles.intro}>
       <div className={styles.container}>
         <div className={styles.content}>
-          <div className={styles.mainText}>
-            CURSOS E IMERSÕES. UMA NOVA CULTURA DE MERCADO.
-          </div>
+          <TextScroller
+            texts={mainTexts}
+            className={styles.mainText}
+            scrollProgress={scrollProgress}
+            multiplier={50}
+          />
           <div className={styles.line2}></div>
-          <div className={styles.subText}>
-            TECNOLOGIA, INOVAÇÃO E NEGÓCIOS. PRESENTE E FUTURO.
-          </div>
+          <TextScroller
+            texts={subTexts}
+            className={styles.subText}
+            scrollProgress={scrollProgress}
+            multiplier={50}
+          />
           <div className={styles.line3}></div>
+
           <div className={styles.imageContainer}>
             <Image
               src="/imgs/intro.png"
@@ -24,19 +45,20 @@ export default function Intro() {
               className={styles.introImage}
             />
             <div className={styles.skillsSection}>
-              <div className={styles.skillsLine}>
-                <div className={styles.skillsText}>SKILLS</div>
-                <div className={styles.ellipse}></div>
-                <div className={styles.conhecimentoText}>CONHECIMENTO</div>
-                  <div className={styles.skillsText}>SKILLS</div>
-                <div className={styles.ellipse}></div>
-                <div className={styles.conhecimentoText}>CONHECIMENTO</div>
-              </div>
+              <SkillsLine
+                items={skillsItems}
+                scrollProgress={scrollProgress}
+                multiplier={100}
+              />
             </div>
           </div>
-          <div className={styles.tutorialsText}>
-            MUITO. MUITO ALÉM DOS TUTORIAIS
-          </div>
+
+          <TextScroller
+            texts={tutorialsTexts}
+            className={styles.tutorialsText}
+            scrollProgress={scrollProgress}
+            multiplier={80}
+          />
         </div>
       </div>
     </section>

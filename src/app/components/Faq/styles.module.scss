@@ -1,3 +1,5 @@
+@use "../../styles/responsive.scss" as *;
+
 .faq {
   width: 100%;
   background-color: #000000;
@@ -68,6 +70,7 @@
   font: inherit;
   color: inherit;
   outline: none;
+  cursor: pointer;
   
   &:focus {
     outline: none;
@@ -213,7 +216,161 @@
   }
 }
 
-@media (max-width: 414px) {
+@include tablet {
+  .faq {
+    padding: 80px 0;
+  }
+
+  .container {
+    width: 90%;
+    height: auto;
+    padding: 0 40px;
+    max-width: 900px;
+  }
+
+  .title {
+    font-size: 72px;
+    line-height: 80px;
+    width: auto;
+    height: auto;
+    text-align: center;
+  }
+
+  .subtitle {
+    font-size: 20px;
+    line-height: 24px;
+    width: auto;
+    height: auto;
+    text-align: center;
+    margin: 15px 0 0 0;
+  }
+
+  .header {
+    text-align: center;
+    margin-bottom: 80px;
+  }
+
+  .questionsGrid {
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: repeat(3, auto);
+    gap: 40px 60px;
+    max-width: 800px;
+    margin: 0 auto;
+  }
+
+  .questionItem {
+    .question {
+      width: 100% !important;
+      height: auto !important;
+      font-size: 18px;
+      line-height: 22px;
+      text-align: left;
+    }
+    
+    .answer {
+      width: 100% !important;
+      height: auto !important;
+      font-size: 15px;
+      line-height: 20px;
+    }
+  }
+
+  .line {
+    width: 60px;
+  }
+  
+  .lineHover {
+    width: 100%;
+    max-width: 350px;
+  }
+}
+
+@include above(breakpoint(mobileXLarge)) {
+  @include below(breakpoint(tabletSmall)) {
+    .faq {
+      padding: 50px 0;
+    }
+
+    .container {
+      width: 100%;
+      height: auto;
+      padding: 0 24px;
+    }
+
+    .title {
+      font-size: 48px;
+      line-height: 54px;
+      letter-spacing: -3%;
+      text-align: left;
+      width: 100%;
+      max-width: 380px;
+      height: auto;
+      margin: 0;
+    }
+
+    .subtitle {
+      font-size: 17px;
+      line-height: 24px;
+      letter-spacing: 3%;
+      text-align: left;
+      margin: 12px 0 0 0;
+      width: 100%;
+      max-width: 300px;
+      height: auto;
+    }
+
+    .questionsGrid {
+      display: flex;
+      flex-direction: column;
+      gap: 35px;
+      margin-top: 35px;
+    }
+
+    .questionItem {
+      width: 100%;
+      margin-bottom: 35px;
+      
+      &:last-child {
+        margin-bottom: 0;
+      }
+      
+      .question {
+        width: 100% !important;
+        max-width: 380px;
+        height: auto !important;
+        font-size: 15px;
+        line-height: 19px;
+        text-align: left;
+        margin-bottom: 12px;
+      }
+      
+      .answer {
+        width: 100% !important;
+        max-width: 380px;
+        height: auto !important;
+        font-size: 13px;
+        line-height: 17px;
+        margin-top: 12px;
+      }
+    }
+
+    .line {
+      width: 55px;
+      margin-bottom: 18px;
+      border-top: 2px solid #949B99;
+      opacity: 0.5;
+    }
+    
+    .lineHover {
+      width: 100%;
+      max-width: 380px;
+      border-top: 2px solid #ED145B;
+      opacity: 1;
+    }
+  }
+}
+
+@include mobile {
   .faq {
     padding: 60px 0;
   }
@@ -221,58 +378,151 @@
   .container {
     width: 100%;
     height: auto;
-    padding: 0 20px;
+    padding: 0 28px;
   }
 
   .title {
-    font-size: 48px;
-    line-height: 40px;
-    text-align: center;
-    width: 100%;
-    height: auto;
+    font-size: 52px;
+    line-height: 60px;
+    letter-spacing: -3%;
+    text-align: left;
+    width: 312px;
+    height: 52px;
+    margin: 0;
   }
 
   .subtitle {
     font-size: 18px;
-    line-height: 22px;
-    text-align: center;
-    margin: 15px 0 0 0;
-    width: 100%;
-    height: auto;
+    line-height: 27px;
+    letter-spacing: 3%;
+    text-align: left;
+    margin: 10px 0 0 2px;
+    width: 218px;
+    height: 20px;
   }
 
   .questionsGrid {
     display: flex;
     flex-direction: column;
     gap: 40px;
+    margin-top: 40px;
   }
 
   .questionItem {
     width: 100%;
+    margin-bottom: 40px;
+    
+    &:last-child {
+      margin-bottom: 0;
+    }
     
     .question {
-      width: 100% !important;
+      width: 345px !important;
       height: auto !important;
       font-size: 16px;
       line-height: 20px;
       text-align: left;
+      margin-bottom: 15px;
     }
     
     .answer {
-      width: 100% !important;
+      width: 345px !important;
       height: auto !important;
       font-size: 14px;
       line-height: 18px;
-      margin-top: 7px;
+      margin-top: 15px;
     }
   }
 
   .line {
-    width: 50px;
+    width: 61px;
     margin-bottom: 20px;
+    border-top: 2px solid #949B99;
+    opacity: 0.5;
   }
   
   .lineHover {
+    width: 345px;
+    border-top: 2px solid #ED145B;
+    opacity: 1;
+  }
+}
+
+@include below(breakpoint(mobileSmall)) {
+  .container {
+    padding: 0 20px;
+  }
+
+  .title {
+    font-size: 42px;
+    line-height: 48px;
+    width: 280px;
+  }
+
+  .subtitle {
+    font-size: 16px;
+    line-height: 24px;
+    width: 200px;
+  }
+
+  .questionItem {
+    .question {
+      width: 100% !important;
+      max-width: 320px;
+    }
+    
+    .answer {
+      width: 100% !important;
+      max-width: 320px;
+    }
+  }
+
+  .lineHover {
     width: 100%;
+    max-width: 320px;
+  }
+}
+
+@include above(breakpoint(mobileSmall)) {
+  @include below(breakpoint(mobileMedium)) {
+    .title {
+      font-size: 48px;
+      line-height: 54px;
+    }
+
+    .questionItem {
+      .question {
+        font-size: 15px;
+        line-height: 19px;
+      }
+    }
+  }
+}
+
+@include mobileLandscape {
+  .faq {
+    padding: 40px 0;
+  }
+
+  .container {
+    padding: 0 40px;
+  }
+
+  .title {
+    font-size: 44px;
+    line-height: 50px;
+  }
+
+  .subtitle {
+    font-size: 16px;
+    line-height: 24px;
+  }
+
+  .questionsGrid {
+    margin-top: 30px;
+  }
+
+  .questionItem {
+    margin-bottom: 30px;
   }
 }

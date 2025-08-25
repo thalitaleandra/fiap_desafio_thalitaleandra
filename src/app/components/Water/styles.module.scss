@@ -1,3 +1,5 @@
+@use "../../styles/responsive.scss" as *;
+
 .intro {
   width: 100%;
   display: flex;
@@ -28,4 +30,15 @@
   object-fit: cover;
   opacity: 1;
   display: block;
+}
+
+@include mobile {
+  .intro {
+    display: none;
+  }
+}
+@include below(breakpoint(desktopSmall)) {
+  .intro {
+    display: none;
+  }
 }

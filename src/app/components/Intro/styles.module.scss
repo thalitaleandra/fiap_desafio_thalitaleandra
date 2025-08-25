@@ -1,3 +1,5 @@
+@use "../../styles/responsive.scss" as *;
+
 .intro {
   width: 100%;
   min-height: 100vh;
@@ -25,37 +27,7 @@
   position: relative;
 }
 
-.mainText {
-  position: relative;
-  width: max-content;
-  height: 115px;
-  margin-bottom: 13px;
-  font-family: "Gotham HTF", Arial, sans-serif;
-  font-weight: 500;
-  font-size: 83px;
-  line-height: 115px;
-  text-transform: uppercase;
-  color: #FFFFFF;
-  white-space: nowrap;
-  overflow: visible;
-  animation: scrollTextRight 15s linear infinite;
-  display: flex;
-  align-items: center;
-}
-
-
-.line2 {
-  width: 1919px;
-  height: 0px;
-  border-top: 2px solid #FFFFFF;
-  margin-bottom: 30px;
-  margin-left: -30px;
-  border-bottom: none;
-  border-left: none;
-  border-right: none;
-  opacity: 1;
-}
-
+.mainText,
 .subText {
   position: relative;
   width: max-content;
@@ -69,88 +41,26 @@
   color: #FFFFFF;
   white-space: nowrap;
   overflow: visible;
-  animation: scrollTextLeft 15s linear infinite;
   display: flex;
   align-items: center;
 }
 
+.mainText {
+  animation: scrollTextRight 15s linear infinite;
+}
 
+.subText {
+  animation: scrollTextLeft 15s linear infinite;
+}
+
+.line2,
 .line3 {
   width: 1919px;
-  height: 0px;
+  height: 0;
   border-top: 2px solid #FFFFFF;
-  margin-bottom: 21px;
-  margin-left: -29px;
-  border-bottom: none;
-  border-left: none;
-  border-right: none;
+  margin-bottom: 30px;
+  margin-left: -30px;
   opacity: 1;
-}
-
-@keyframes scrollTextRight {
-  0% {
-    transform: translateX(-100%);
-  }
-  100% {
-    transform: translateX(100vw);
-  }
-}
-
-@keyframes scrollTextLeft {
-  0% {
-    transform: translateX(100vw);
-  }
-  100% {
-    transform: translateX(-100%);
-  }
-}
-
-@keyframes scrollTextRightSlow {
-  0% {
-    transform: translateX(-100%);
-  }
-  100% {
-    transform: translateX(100vw);
-  }
-}
-
-@keyframes scrollSkillsRight {
-  0% {
-    transform: translateX(-100%);
-  }
-  100% {
-    transform: translateX(100vw);
-  }
-}
-
-@keyframes scrollKnowledgeLeft {
-  0% {
-    transform: translateX(100vw);
-  }
-  100% {
-    transform: translateX(-100%);
-  }
-}
-
-@keyframes bounce {
-  0%, 20%, 50%, 80%, 100% {
-    transform: translateY(0);
-  }
-  40% {
-    transform: translateY(-10px);
-  }
-  60% {
-    transform: translateY(-5px);
-  }
-}
-
-@keyframes rotate {
-  0% {
-    transform: rotate(0deg);
-  }
-  100% {
-    transform: rotate(360deg);
-  }
 }
 
 .imageContainer {
@@ -174,12 +84,13 @@
 
 .skillsSection {
   position: absolute;
-  top: 90%;
+  top: 80%;
   left: 50%;
-  transform: translate(-50%, -50%);
+  transform: translateX(-50%);
   display: flex;
-  width: auto;
-  z-index: 2;
+  flex-direction: column;
+  gap: 50px;
+  z-index: 3;
 }
 
 .skillsLine {
@@ -187,37 +98,11 @@
   align-items: center;
   gap: 37px;
   width: max-content;
-  animation: scrollSkillsRight 15s linear infinite;
+  z-index: 3;
+  position: relative;
 }
 
-.skillsText {
-  width: max-content;
-  height: 121px;
-  font-family: "Gotham HTF", Arial, sans-serif;
-  font-weight: 500;
-  font-size: 144px;
-  line-height: 27px;
-  letter-spacing: -6%;
-  text-transform: uppercase;
-  color: transparent;
-  -webkit-text-stroke: 2px #454C4F;
-  text-stroke: 2px #454C4F;
-  white-space: nowrap;
-  overflow: visible;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.ellipse {
-  width: 38px;
-  height: 38px;
-  border: 2px solid #454C4F;
-  border-radius: 50%;
-  animation: rotate 3s linear infinite;
-  flex-shrink: 0;
-}
-
+.skillsText,
 .conhecimentoText {
   width: max-content;
   height: 121px;
@@ -235,6 +120,17 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  position: relative;
+}
+
+.ellipse {
+  width: 38px;
+  height: 38px;
+  border: 2px solid #454C4F;
+  border-radius: 50%;
+  flex-shrink: 0;
+  position: relative;
+  z-index: 3;
 }
 
 .tutorialsText {
@@ -253,90 +149,55 @@
   text-stroke: 2px #454C4F;
   white-space: nowrap;
   overflow: visible;
-  animation: scrollTextRightSlow 15s linear infinite;
   display: flex;
   align-items: center;
   justify-content: center;
   opacity: 1;
 }
 
-@media (max-width: 1920px) {
-  .mainText,
-  .subText {
-    font-size: 70px;
-    line-height: 100px;
-    height: 100px;
-  }
-  
-  .line2,
-  .line3 {
-    width: 100%;
-    margin-left: 0;
-  }
-  
-  .tutorialsText {
-    width: 100%;
-    margin-left: 0;
-    font-size: 120px;
-  }
-  
-  .skillsText,
-  .conhecimentoText {
-    font-size: 120px;
-    -webkit-text-stroke: 1.5px #454C4F;
-    text-stroke: 1.5px #454C4F;
-  }
-}
+@keyframes scrollTextRight { 0% { transform: translateX(-100%); } 100% { transform: translateX(100vw); } }
+@keyframes scrollTextLeft { 0% { transform: translateX(100vw); } 100% { transform: translateX(-100%); } }
+@keyframes scrollTextRightSlow { 0% { transform: translateX(-100%); } 100% { transform: translateX(100vw); } }
+@keyframes bounce { 0%, 20%, 50%, 80%, 100% { transform: translateY(0); } 40% { transform: translateY(-10px); } 60% { transform: translateY(-5px); } }
+@keyframes rotate { 0% { transform: rotate(0deg); } 100% { transform: rotate(360deg); } }
 
-@media (max-width: 768px) {
+@include mobile {
   .intro {
-    padding: 50px 0;
-  }
-  
-  .container {
-    padding: 0 20px;
-  }
-  
-  .mainText,
-  .subText {
-    font-size: 42px;
-    line-height: 60px;
-    height: 60px;
-  }
-  
-  .line2,
-  .line3 {
-    width: 100%;
-    margin-left: 0;
-  }
-  
-  .skillsText,
-  .conhecimentoText {
-    font-size: 72px;
-    line-height: 60px;
-    height: 80px;
-    -webkit-text-stroke: 1px #454C4F;
-    text-stroke: 1px #454C4F;
-  }
-  
-  .tutorialsText {
-    width: 100%;
-    margin-left: 0;
-    font-size: 48px;
-    line-height: 50px;
-    height: 60px;
-  }
-  
-  .skillsLine {
-    gap: 20px;
-  }
-  
-  .ellipse {
-    width: 24px;
-    height: 24px;
+    padding: 20px 15px;    
+    min-height: auto;         
+    overflow: hidden;
   }
 
-  .skillsSection {
-    top: 75%;
+  .line2,
+  .line3 {
+    margin-bottom: 5px;
+  }
+
+  .container {
+    padding: 0 15px;
+    align-items: center;
+  }
+
+  .content {
+    align-items: center;
+  }
+
+  .mainText,
+  .subText {
+    font-size: 28px;
+    line-height: 32px;
+    text-align: center;
+    margin: 8px 0;
+    max-width: 100vw;
+  }
+
+  .imageContainer,
+  .skillsSection,
+  .skillsLine,
+  .skillsText,
+  .conhecimentoText,
+  .tutorialsText,
+  .ellipse {
+    display: none;
   }
 }
