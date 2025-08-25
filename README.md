@@ -1,36 +1,119 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# FIAP DESAFIO TÉCNICO
 
-## Getting Started
+📋 **Índice**  
+- [🎯 Sobre o Projeto](#-sobre-o-projeto)  
+- [⚡ Funcionalidades](#-funcionalidades)  
+- [🛠️ Stack Tecnológica](#-stack-tecnológica)  
+- [🏗️ Arquitetura Limpa](#-arquitetura-limpa)  
+- [🌐 Compatibilidade de Navegadores](#-compatibilidade-de-navegadores)  
+- [📱 Design Responsivo](#-design-responsivo)  
+- [📁 Estrutura do Projeto](#-estrutura-do-projeto)  
+- [📦 Pré-requisitos](#-pré-requisitos)  
+- [⚙️ Instalação com Yarn](#-instalação-com-yarn)  
+- [🚀 Como Executar](#-como-executar)  
 
-First, run the development server:
+---
 
+## 🎯 Sobre o Projeto
+O DESAFIO TÉCNICO é uma landing page moderna desenvolvida como desafio técnico, apresentando uma interface elegante e responsiva para cursos e imersões tecnológicas da FIAP.  
+O projeto demonstra proficiência em tecnologias front-end modernas, implementação de componentes reutilizáveis e aplicação de princípios de **Clean Architecture**.
+
+**Objetivos atingidos:**
+- ✅ Interface moderna e intuitiva  
+- ✅ Design responsivo para todos os dispositivos  
+- ✅ Animações e micro-interações fluidas  
+- ✅ Componentização clara e reutilizável  
+- ✅ TypeScript para type safety  
+- ✅ Boas práticas de desenvolvimento  
+
+---
+
+## ⚡ Funcionalidades
+- Navbar dinâmica  
+- Seções de cursos (Courses), FAQ e Intro  
+- Accordion para mobile  
+- Transições suaves de conteúdo  
+- Dark mode compatível  
+- Tipografia Gotham HTF  
+
+---
+
+## 🛠️ Stack Tecnológica
+- **Front-end:** React.js, Next.js, TypeScript  
+- **Estilos:** SCSS, CSS Modules  
+- **Fontes:** Gotham HTF (woff/woff2)  
+- **Ferramentas:** Yarn, VSCode  
+
+---
+
+## 🏗️ Arquitetura Limpa
+O projeto segue **componentização** e separação por tipo de recurso:  
+- **Components:** Courses, FAQ, Header, Intro, Nav, Bar, etc.  
+- **Hooks:** Reutilizáveis para lógica de estado e interações  
+- **Styles:** SCSS modulares e variáveis globais  
+- **Types:** Tipagens TypeScript para segurança de dados  
+- **Data:** Arquivos estáticos de cursos, FAQs e conteúdo  
+
+---
+
+## 🌐 Compatibilidade de Navegadores
+- Chrome  
+- Firefox  
+- Edge  
+- Safari  
+
+---
+
+## 📱 Design Responsivo
+- Mobile, tablet e desktop  
+- Accordion exclusivo para mobile  
+- Fontes e espaçamentos ajustados por breakpoint  
+
+## 📁 Estrutura do Projeto
+src/
+├─ app/
+│ ├─ components/ # Courses, FAQ, Header, Intro, Nav, Bar...
+│ ├─ hooks/ # Hooks reutilizáveis
+│ ├─ styles/ # SCSS, globals, variables
+│ ├─ types/ # Tipagens TypeScript
+│ └─ data/ # Conteúdo estático (cursos, FAQ)
+
+
+---
+
+## 📦 Pré-requisitos
+- Node.js >= 18  
+- Yarn >= 1.22  
+
+---
+
+## ⚙️ Instalação com Yarn
 ```bash
-npm run dev
-# or
+# Clonar o repositório
+git clone git@github.com:thalitaleandra/fiap_desafio_thalitaleandra.git
+
+# Acessar a pasta do projeto
+cd fiap_desafio_thalitaleandra
+
+# Instalar dependências
+yarn install
+
+🚀 Como Executar
+# Iniciar servidor de desenvolvimento
 yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+# O projeto estará disponível em:
+# http://localhost:3000
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+⚡ Performance & Otimizações
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+Lazy loading de imagens
 
-## Learn More
+SCSS modular para CSS enxuto
 
-To learn more about Next.js, take a look at the following resources:
+Tipagem com TypeScript
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+Variáveis SCSS para cores, fontes e espaçamentos
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
 
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## 📁 Estrutura do Projeto
