@@ -43,8 +43,6 @@ export default function Cursos() {
           activeCategory={activeCategory}
           onCategoryChange={handleCategoryChange}
         />
-
-        {/* DESKTOP */}
         <div className={styles.content}>
           <div className={styles.cursoCard}>
             <div className={styles.cursoInfo}>
@@ -77,8 +75,6 @@ export default function Cursos() {
             </div>
           </div>
         </div>
-
-        {/* MOBILE - Accordion para todas as categorias */}
         <CoursesAccordion
           expandedAccordion={expandedAccordion}
           toggleAccordion={toggleAccordion}
